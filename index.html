@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de página web con formulario</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <figure>
+                <img src="https://imgs.search.brave.com/AX_3tvYXt7xNPJdUh7x-1tJ9ZRK6w469m73yj1SQqZI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9lZHV0/b3J5Lm14L3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIxLzA4L2lu/c3RpdHV0by12YW5n/dWFyZGlhLXRpanVh/bmEtc2VjdW5kYXJp/YS03Njh4NTc2Lmpw/ZWc" alt="Imagen de una escuela" width="150">
+            </figure>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Oferta educativa</a></li>
+                <li><a href="#">Oferta Laboral</a></li>
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Ininiar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Registro de alumnos</h1>
+        <form id="registro" method="post">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="name">Nombre: </label>
+                <input type="text" name="name" id="name" placeholder="Ingrese su nombre" required>
+                <br>
+                <label for="last-name" >Apellidos</label>
+                <input type="text" name="last-name" id="last-name" placeholder="Ingrese sus apellidos" required>
+                <br>    
+                <label for="age">Edad: </label>
+                <input type="date" name="age" id="age" max="" required>
+            </fieldset>
+            <fieldset>
+                <legend>Datos escolares</legend>
+                <label for="school-name">Escuela de egreso: </label>
+                <input type="text" name="school-name" id="school-name" placeholder="Nombre de la escuela de egreso" size="25" required>
+                <br>
+                <label for="scores">Promedio: </label>
+                <input type="number" name="scores" id="scores" style="width: 65px" min="0" max="10" step="0.01" required title="Ingresa un número entre 0 y 10, con hasta dos decimales">
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+</body>
+<script>
+    // Calcula la fecha máxima permitida para que el usuario sea mayor de 18 años
+    const ageInput = document.getElementById("age");
+    const today = new Date();
+    const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+    ageInput.max = maxDate.toISOString().split("T")[0];
+</script>
+
+</html>
