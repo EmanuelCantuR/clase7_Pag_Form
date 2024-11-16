@@ -1,0 +1,11 @@
+.header {
+    display: flex;              /* Hace que los elementos hijos se alineen en una fila */
+    align-items: center;        /* Alinea los elementos verticalmente */
+    justify-content: space-between; /* Espacio entre el logo y el nav */
+    padding: 10px;
+}
+
+.nav a {
+    margin: 0 10px;             /* Espacio entre los enlaces */
+    text-decoration: none;
+}
